@@ -50,9 +50,8 @@ pnpm-debug.log*
 .temp/
 tmp/
 
-# Docker
-.dockerignore
-
 # OS
 Thumbs.db
 .DS_Store
+
+COMMIT_STRATEGY.md
