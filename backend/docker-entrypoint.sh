@@ -1,10 +1,11 @@
 #!/bin/sh
 set -e
 
-echo "í´„ Running database migrations..."
-npx prisma migrate deploy
+echo "ðŸ”„ Syncing database schema..."
+# db push crea las tablas inmediatamente basÃ¡ndose en tu schema.prisma
+npx prisma db push --accept-data-loss
 
-echo "âœ… Migrations completed"
-echo "íº€ Starting server..."
+echo "âœ… Database schema synced"
+echo "ðŸš€ Starting server..."
 
 exec node dist/server.js
