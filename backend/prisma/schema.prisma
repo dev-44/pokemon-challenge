@@ -1,0 +1,19 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model FavoriteList {
+  id          String   @id @default(uuid())
+  uniqueCode  String   @unique @map("unique_code")
+  pokemonIds  String   @map("pokemon_ids")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  @@map("favorite_lists")
+  @@index([uniqueCode])
+}
